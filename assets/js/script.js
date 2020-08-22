@@ -19,14 +19,14 @@ menuBtn.addEventListener('click', () => {
 const timeline = gsap.timeline({ defaults: { duration: 1 } });
 
 timeline
-	.from('main header h1', { y: '-50%', opacity: 0 });
+	.from('main .header h1', { y: '-50%', opacity: 0 });
 
 const floatingBtn = document.querySelector('main .header div .floating');
 floatingBtn.addEventListener('click', e => {
-	window.scrollTo(0 , e.screenY);
+	window.scrollTo(0, e.screenY);
 });
 
 const icon = document.querySelector('nav .nav__icon');
 icon.addEventListener('click', e => {
-	window.scrollTo(0 , 0);
+	window.scrollTo(0, 0);
 });
