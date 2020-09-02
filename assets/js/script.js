@@ -19,11 +19,13 @@ menuBtn.addEventListener('click', () => {
 const timeline = gsap.timeline({ defaults: { duration: 1 } });
 
 timeline
-	.from('main .header h1', { y: '-50%', opacity: 0 });
+	.from('main .header h1', { y: '-50%', opacity: 0 })
+	.from('a.nav__item', { opacity: 0, stagger: 0.5 }, '<.3')
+	.from('main .header > div', { y: '50%', opacity: 0 }, 0);
 
 const floatingBtn = document.querySelector('main .header div .floating');
 floatingBtn.addEventListener('click', e => {
-	window.scrollTo(0, e.screenY);
+	window.scrollTo(0, window.innerHeight);
 });
 
 const icon = document.querySelector('nav .nav__icon');
