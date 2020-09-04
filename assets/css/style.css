@@ -484,4 +484,8 @@ footer span a i {
 	main .projects .project > div:nth-child(2) > div .btns {
 		flex-direction: column;
 	}
+
+	main .projects .categories {
+		flex-wrap: wrap;
+	}
 }
