@@ -32,3 +32,26 @@ const icon = document.querySelector('nav .nav__icon');
 icon.addEventListener('click', e => {
 	window.scrollTo(0, 0);
 });
+
+
+const react = document.getElementById('react');
+const node = document.getElementById('node');
+const django = document.getElementById('django');
+
+const filters = document.querySelectorAll('.category');
+
+const projects = document.querySelectorAll('.project');
+
+filters.forEach(filter => {
+	filter.addEventListener('click', () => {
+		filters.forEach(filter => { filter.classList.remove('active'); });
+		filter.classList.add('active');
+		let values = filter.innerText.toLowerCase();
+		projects.forEach(project => {
+			project.style.display = 'none';
+			if (project.getAttribute('data-skill') === values || project.getAttribute('data-skill2') === values || values === 'all') {
+				project.style.display = 'flex';
+			}
+		});
+	});
+});

@@ -24,7 +24,7 @@ a {
 	color: var(--text-color);
 }
 
-body>header {
+body > header {
 	position: fixed;
 	top: 0;
 	width: 100%;
@@ -219,7 +219,7 @@ main .header div .floating {
 	}
 }
 
-main .skills>h1 {
+main .skills > h1 {
 	text-align: center;
 	margin: 1rem 0;
 }
@@ -330,6 +330,34 @@ main .projects {
 	margin: 0 auto;
 }
 
+main .projects .filters-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin: 1rem 0;
+}
+
+main .projects .categories {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+main .projects .categories .category {
+	margin: 1rem 1rem;
+	font-size: 1rem;
+	padding: .5rem 1rem;
+	border-radius: 3px;
+	border: 1px solid rgb(204, 203, 203);
+	cursor: pointer;
+	outline: none;
+}
+
+main .projects .categories .category.active {
+	background-color: #4ECB25;
+}
+
 main .projects .project {
 	display: flex;
 	flex-direction: column;
@@ -343,47 +371,47 @@ main .projects .project {
 	border-radius: .5rem;
 }
 
-main .projects .project>div:nth-child(1) {
+main .projects .project > div:nth-child(1) {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-main .projects .project>div:nth-child(1) img {
+main .projects .project > div:nth-child(1) img {
 	width: 70%;
 	object-fit: contain;
 	margin: .5rem;
 	border-radius: .3rem;
 }
 
-main .projects .project>div:nth-child(2) {
+main .projects .project > div:nth-child(2) {
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-main .projects .project>div:nth-child(2)>div {
+main .projects .project > div:nth-child(2) > div {
 	width: 70%;
 	margin: .5rem auto;
 }
 
-main .projects .project>div:nth-child(2)>div ul {
+main .projects .project > div:nth-child(2) > div ul {
 	margin: .5rem 10%;
 }
 
-main .projects .project>div:nth-child(2)>div ul {
+main .projects .project > div:nth-child(2) > div ul {
 	margin: .5rem 10%;
 }
 
-main .projects .project>div:nth-child(2)>div .btns {
+main .projects .project > div:nth-child(2) > div .btns {
 	margin: .5rem auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-main .projects .project>div:nth-child(2)>div .btns button {
+main .projects .project > div:nth-child(2) > div .btns button {
 	outline: none;
 	border: none;
 	background: linear-gradient(129deg, rgba(149, 163, 156, 1) 0%, rgba(62, 212, 10, 1) 100%);
@@ -392,6 +420,20 @@ main .projects .project>div:nth-child(2)>div .btns button {
 	border-radius: 2rem;
 	font-size: 1.5rem;
 	cursor: pointer;
+}
+
+footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #111;
+	padding: 1rem 0;
+}
+
+footer span a i {
+	margin: 0 1rem;
+	font-size: 2rem;
+	color: #fff;
 }
 
 @media only screen and (max-width: 600px) {
@@ -439,7 +481,7 @@ main .projects .project>div:nth-child(2)>div .btns button {
 		display: flex;
 	}
 
-	main .projects .project>div:nth-child(2)>div .btns {
+	main .projects .project > div:nth-child(2) > div .btns {
 		flex-direction: column;
 	}
 }
