@@ -371,6 +371,10 @@ main .projects .project {
 	border-radius: .5rem;
 }
 
+main .projects .project > div > img {
+	border: 1px solid #c0c0c0;
+}
+
 main .projects .project > div:nth-child(1) {
 	display: flex;
 	justify-content: center;
