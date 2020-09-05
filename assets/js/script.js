@@ -10,10 +10,17 @@ window.addEventListener('scroll', e => {
 
 const menuBtn = document.querySelector('div.menu-btn');
 const navItems = document.querySelector('div.nav__items');
+const navItem = document.querySelectorAll('a.nav__item');
 menuBtn.addEventListener('click', () => {
 	menuBtn.classList.toggle('open');
 	navItems.classList.toggle('open');
 	blurDiv.classList.toggle('open');
+	navItem.forEach(item => {
+		item.addEventListener('click', () => {
+			menuBtn.classList.remove('open');
+			navItems.classList.remove('open');
+			blurDiv.classList.remove('open');
+	});});
 });
 
 const timeline = gsap.timeline({ defaults: { duration: 1 } });
