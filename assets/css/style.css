@@ -24,7 +24,7 @@ a {
 	color: var(--text-color);
 }
 
-body > header {
+body>header {
 	position: fixed;
 	top: 0;
 	width: 100%;
@@ -219,7 +219,7 @@ main .header div .floating {
 	}
 }
 
-main .skills > h1 {
+main .skills>h1 {
 	text-align: center;
 	margin: 1rem 0;
 }
@@ -371,51 +371,77 @@ main .projects .project {
 	border-radius: .5rem;
 }
 
-main .projects .project > div > img {
-	border: 1px solid #c0c0c0;
+main .projects .project>div>img {
+	border: 1px solid #e9cbcb;
+	width: 70%;
+	height: 90%;
+	object-fit: contain;
 }
 
-main .projects .project > div:nth-child(1) {
+main .projects .project div.project_images {
+	width: 80%;
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
 }
 
-main .projects .project > div:nth-child(1) img {
-	width: 70%;
-	object-fit: contain;
-	margin: .5rem;
-	border-radius: .3rem;
+main .projects .project div.project_images {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
-main .projects .project > div:nth-child(2) {
+
+main .projects .project div.project_images img {
+	width: 70%;
+	object-fit: cover;
+	margin: .5rem;
+	border-radius: .3rem;
+	border: 1px solid #e9cbcb;
+}
+
+main .projects .project div.project_images .side_images {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+main .projects .project div.project_images .side_images img {
+	max-height: 4.7rem;
+	cursor: pointer;
+}
+
+main .projects .project>div:nth-child(2) {
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-main .projects .project > div:nth-child(2) > div {
+main .projects .project>div:nth-child(2)>div {
 	width: 70%;
 	margin: .5rem auto;
 }
 
-main .projects .project > div:nth-child(2) > div ul {
+main .projects .project>div:nth-child(2)>div ul {
 	margin: .5rem 10%;
 }
 
-main .projects .project > div:nth-child(2) > div ul {
+main .projects .project>div:nth-child(2)>div ul {
 	margin: .5rem 10%;
 }
 
-main .projects .project > div:nth-child(2) > div .btns {
+main .projects .project>div:nth-child(2)>div .btns {
 	margin: .5rem auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-main .projects .project > div:nth-child(2) > div .btns button {
+main .projects .project>div:nth-child(2)>div .btns button {
 	outline: none;
 	border: none;
 	background: linear-gradient(129deg, rgba(149, 163, 156, 1) 0%, rgba(62, 212, 10, 1) 100%);
@@ -485,11 +511,19 @@ footer span a i {
 		display: flex;
 	}
 
-	main .projects .project > div:nth-child(2) > div .btns {
+	main .projects .project>div:nth-child(2)>div .btns {
 		flex-direction: column;
 	}
 
 	main .projects .categories {
 		flex-wrap: wrap;
+	}
+
+	main .projects .project div.project_images>img {
+		margin: 1rem auto;
+	}
+
+	main .projects .project div.project_images .side_images {
+		display: none;
 	}
 }
