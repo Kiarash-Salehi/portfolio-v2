@@ -1,6 +1,3 @@
-// var date = new Date();
-// var year = date.getFullYear();
-// document.getElementById('year').innerHTML = year;
 const nav = document.querySelector('nav');
 const blurDiv = document.querySelector('span.blur');
 window.addEventListener('scroll', (e) => {

@@ -394,10 +394,12 @@ main .projects .project div.project_images {
 
 main .projects .project div.project_images img {
 	width: 70%;
-	object-fit: cover;
+	height: 20.85rem;
+	object-fit: contain;
 	margin: .5rem;
 	border-radius: .3rem;
 	border: 1px solid #e9cbcb;
+	border-radius: 5px;
 }
 
 main .projects .project div.project_images .side_images {
@@ -412,6 +414,7 @@ main .projects .project div.project_images .side_images {
 main .projects .project div.project_images .side_images img {
 	max-height: 4.7rem;
 	cursor: pointer;
+	height: 4.69rem;
 }
 
 main .projects .project>div:nth-child(2) {
