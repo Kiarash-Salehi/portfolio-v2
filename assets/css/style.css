@@ -469,6 +469,17 @@ footer span a i {
 	color: #fff;
 }
 
+@media only screen and (max-width: 7700px) {
+	main .projects .project div.project_images>img {
+		margin: 1rem auto;
+		height: 13.85rem;
+	}
+
+	main .projects .project div.project_images .side_images img {
+		height: 3.69rem;
+	}
+}
+
 @media only screen and (max-width: 600px) {
 	nav .nav__items {
 		position: fixed;
