@@ -1,8 +1,16 @@
 const nav = document.querySelector('nav');
 const blurDiv = document.querySelector('span.blur');
+const toTopBtn = document.querySelector('main main.content div.toTopBtn');
 window.addEventListener('scroll', (e) => {
 	if (window.scrollY > 100) nav.style.backgroundColor = 'rgba(255, 255, 255, .7)';
 	else nav.style.backgroundColor = 'transparent';
+	if (window.scrollY >= window.innerHeight) {
+		toTopBtn.style.opacity = '1';
+		toTopBtn.style.transform = 'scale(1)';
+	} else {
+		toTopBtn.style.opacity = '0';
+		toTopBtn.style.transform = 'scale(0)';
+	}
 });
 
 const menuBtn = document.querySelector('div.menu-btn');
@@ -33,10 +41,21 @@ floatingBtn.addEventListener('click', (e) => {
 	window.scrollTo(0, window.innerHeight);
 });
 
+const scrollToTop = element => {
+	element.addEventListener('click', (e) => {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth',
+		});
+	});
+};
+
 const icon = document.querySelector('nav .nav__icon');
-icon.addEventListener('click', (e) => {
-	window.scrollTo(0, 0);
-});
+//icon.addEventListener('click', (e) => {
+//	window.scrollTo(0, 0);
+//});
+scrollToTop(icon);
+scrollToTop(toTopBtn);
 
 const react = document.getElementById('react');
 const node = document.getElementById('node');
