@@ -66,6 +66,10 @@ nav .nav__icon {
 	transform: scaleZ(1) translate(-50%, -50%);
 }
 
+nav .nav__icon {
+	cursor: pointer;
+}
+
 nav .nav__items {
 	display: flex;
 	width: 50%;
@@ -387,6 +391,7 @@ main .projects .project {
 	box-shadow: 0 0 8px 1px rgba(0, 0, 0, .3);
 	width: 92%;
 	border-radius: .5rem;
+	transition: all 0.3s;
 }
 
 main .projects .project>div>img {
