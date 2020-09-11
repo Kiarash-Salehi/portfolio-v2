@@ -556,6 +556,10 @@ footer span a i {
 		flex-wrap: wrap;
 	}
 
+	main .projects .project div.project_images {
+		flex-direction: column;
+	}
+
 	main .projects .project div.project_images>img {
 		margin: 1rem auto;
 		width: 100%;
@@ -563,6 +567,14 @@ footer span a i {
 	}
 
 	main .projects .project div.project_images .side_images {
-		display: none;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		width: 100%;
+	}
+
+	main .projects .project div.project_images .side_images img {
+		width: 80px;
+		margin: .2rem auto;
 	}
 }

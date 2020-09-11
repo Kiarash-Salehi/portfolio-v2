@@ -20,6 +20,10 @@ const django = document.getElementById('django');
 const filters = document.querySelectorAll('.category');
 const projects = document.querySelectorAll('.project');
 
+if (window.scrollY >= window.innerHeight) {
+	toTopBtn.style.opacity = '1';
+	toTopBtn.style.transform = 'scale(1)';
+}
 window.addEventListener('scroll', (e) => {
 	if (window.scrollY > 100) nav.style.backgroundColor = 'rgba(255, 255, 255, .7)';
 	else nav.style.backgroundColor = 'transparent';
