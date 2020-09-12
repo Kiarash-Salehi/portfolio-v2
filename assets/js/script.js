@@ -11,7 +11,7 @@ const yelpClone = document.querySelector('#yelp-clone');
 const projectImages = [travelLog, amazonClone, realestate, covidTracker, netflixCone, yelpClone];
 const menuBtn = document.querySelector('div.menu-btn');
 const navItems = document.querySelector('div.nav__items');
-const navItem = document.querySelectorAll('a.nav__item');
+const navItem = document.querySelectorAll('.nav__item');
 const floatingBtn = document.querySelector('main .header div .floating');
 const icon = document.querySelector('nav .nav__icon');
 const react = document.getElementById('react');
@@ -26,19 +26,57 @@ if (window.scrollY >= window.innerHeight) {
 	toTopBtn.style.transform = 'scale(1)';
 }
 
+navItem.forEach(item => {
+	item.addEventListener('click', () => {
+		sections.forEach(section => {
+			if (section.getAttribute('id') === item.dataset.to) {
+				window.scrollTo({
+					top: section.offsetTop,
+					behavior: 'smooth',
+				});
+			}
+		});
+	});
+});
+
 sections.forEach(section => {
 	navItem.forEach(item => {
-	if (window.scrollY >= section.offsetTop - 370) {
+		if (window.scrollY >= section.offsetTop - 370) {
 			item.classList.remove('active-nav');
-			if (item.dataset.to === section.getAttribute('id')) {
-				item.classList.add('active-nav');
-			}
+			if (window.innerWidth <= 600) {
+					if (window.scrollY + 900 >= document.body.scrollHeight) {
+						console.log(window.scrollY);
+						console.log(document.body.scrollHeight - 100);
+					navItem[2].classList.add('active-nav');
+					} else if (item.dataset.to === section.getAttribute('id')) {
+						item.classList.add('active-nav');
+					}
+				} else {
+					if (item.dataset.to === section.getAttribute('id')) {
+						item.classList.add('active-nav');
+					}
+				}
 		}
 		if (window.scrollY < sections[0].offsetTop) {
 			item.classList.remove('active-nav');
 		}
 	});
 });
+/*
+sections.forEach(section => {
+		navItem.forEach(item => {
+			if (window.scrollY >= section.offsetTop - 370) {
+				item.classList.remove('active-nav');
+				if (item.dataset.to === section.getAttribute('id')) {
+					item.classList.add('active-nav');
+				}
+			}
+			if (window.scrollY < sections[0].offsetTop) {
+				item.classList.remove('active-nav');
+			}
+		});
+	});
+*/
 
 window.addEventListener('scroll', (e) => {
 	sections.forEach(section => {
@@ -57,8 +95,18 @@ window.addEventListener('scroll', (e) => {
 		navItem.forEach(item => {
 			if (window.scrollY >= section.offsetTop - 370) {
 				item.classList.remove('active-nav');
-				if (item.dataset.to === section.getAttribute('id')) {
-					item.classList.add('active-nav');
+				if (window.innerWidth <= 600) {
+					if (window.scrollY + 900 >= document.body.scrollHeight) {
+						console.log(window.scrollY);
+						console.log(document.body.scrollHeight - 100);
+					navItem[2].classList.add('active-nav');
+					} else if (item.dataset.to === section.getAttribute('id')) {
+						item.classList.add('active-nav');
+					}
+				} else {
+					if (item.dataset.to === section.getAttribute('id')) {
+						item.classList.add('active-nav');
+					}
 				}
 			}
 			if (window.scrollY < sections[0].offsetTop) {
@@ -84,7 +132,7 @@ menuBtn.addEventListener('click', () => {
 const timeline = gsap.timeline({ defaults: { duration: 1 } });
 timeline
 	.from('main .header h1', { y: '-50%', opacity: 0 })
-	.from('a.nav__item', { opacity: 0, stagger: 0.5 }, '<.3')
+	.from('div.nav__item', { opacity: 0, stagger: 0.5 }, '<.3')
 	.from('main .header > div', { y: '50%', opacity: 0 }, 0);
 
 floatingBtn.addEventListener('click', (e) => {
