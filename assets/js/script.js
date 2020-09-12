@@ -19,12 +19,31 @@ const node = document.getElementById('node');
 const django = document.getElementById('django');
 const filters = document.querySelectorAll('.category');
 const projects = document.querySelectorAll('.project');
+const sections = [document.getElementById('skills'), document.getElementById('projects'), document.getElementById('about-me')];
 
 if (window.scrollY >= window.innerHeight) {
 	toTopBtn.style.opacity = '1';
 	toTopBtn.style.transform = 'scale(1)';
 }
+
+sections.forEach(section => {
+	navItem.forEach(item => {
+	if (window.scrollY >= section.offsetTop - 370) {
+			item.classList.remove('active-nav');
+			if (item.dataset.to === section.getAttribute('id')) {
+				item.classList.add('active-nav');
+			}
+		}
+		if (window.scrollY < sections[0].offsetTop) {
+			item.classList.remove('active-nav');
+		}
+	});
+});
+
 window.addEventListener('scroll', (e) => {
+	sections.forEach(section => {
+		let activeSections = section.classList.contains('active-section');
+	});
 	if (window.scrollY > 100) nav.style.backgroundColor = 'rgba(255, 255, 255, .7)';
 	else nav.style.backgroundColor = 'transparent';
 	if (window.scrollY >= window.innerHeight) {
@@ -34,6 +53,19 @@ window.addEventListener('scroll', (e) => {
 		toTopBtn.style.opacity = '0';
 		toTopBtn.style.transform = 'scale(0)';
 	}
+	sections.forEach(section => {
+		navItem.forEach(item => {
+			if (window.scrollY >= section.offsetTop - 370) {
+				item.classList.remove('active-nav');
+				if (item.dataset.to === section.getAttribute('id')) {
+					item.classList.add('active-nav');
+				}
+			}
+			if (window.scrollY < sections[0].offsetTop) {
+				item.classList.remove('active-nav');
+			}
+		});
+	});
 });
 
 menuBtn.addEventListener('click', () => {

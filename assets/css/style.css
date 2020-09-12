@@ -6,6 +6,16 @@
 	font-family: 'Roboto', sans-serif;
 }
 
+
+
+nav .nav__items .nav__item.active-nav::after {
+	transform:scale(1);
+	opacity: 1;
+}
+
+
+
+
 :root {
 	--background-color: #f5f6fa;
 	--text-color: #000;
