@@ -136,7 +136,10 @@ timeline
 	.from('main .header > div', { y: '50%', opacity: 0 }, 0);
 
 floatingBtn.addEventListener('click', (e) => {
-	window.scrollTo(0, window.innerHeight);
+	window.scrollTo({
+		top: window.innerHeight,
+		behavior: 'smooth'
+	});
 });
 
 const scrollToTop = element => {
