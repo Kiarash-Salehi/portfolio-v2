@@ -161,13 +161,32 @@ filters.forEach((filter) => {
 		filter.classList.add('active');
 		let values = filter.innerText.toLowerCase();
 		projects.forEach((project) => {
-			project.style.display = 'none';
+			//project.style.display = 'none';
+			//if (
+			//	project.getAttribute('data-skill') === values ||
+			//	project.getAttribute('data-skill2') === values ||
+			//	values === 'all'
+			//) {
+			//	project.style.display = 'flex';
+			//}
 			if (
 				project.getAttribute('data-skill') === values ||
 				project.getAttribute('data-skill2') === values ||
 				values === 'all'
 			) {
+				window.setTimeout(() => {
+					project.style.transform = 'scale(1)';
+					project.style.opacity = '1';
+				}, 300);
 				project.style.display = 'flex';
+			} else {
+				project.style.transform = 'scale(0)';
+				project.style.opacity = '0';
+				project.style.height = '0';
+				sections[1].style.display = 'flex';
+				window.setTimeout(() => {
+					project.style.display = 'none';
+				}, 300);
 			}
 		});
 	});
