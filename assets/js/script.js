@@ -44,18 +44,16 @@ sections.forEach(section => {
 		if (window.scrollY >= section.offsetTop - 370) {
 			item.classList.remove('active-nav');
 			if (window.innerWidth <= 600) {
-					if (window.scrollY + 900 >= document.body.scrollHeight) {
-						console.log(window.scrollY);
-						console.log(document.body.scrollHeight - 100);
+				if (window.scrollY + 900 >= document.body.scrollHeight) {
 					navItem[2].classList.add('active-nav');
-					} else if (item.dataset.to === section.getAttribute('id')) {
-						item.classList.add('active-nav');
-					}
-				} else {
-					if (item.dataset.to === section.getAttribute('id')) {
-						item.classList.add('active-nav');
-					}
+				} else if (item.dataset.to === section.getAttribute('id')) {
+					item.classList.add('active-nav');
 				}
+			} else {
+				if (item.dataset.to === section.getAttribute('id')) {
+					item.classList.add('active-nav');
+				}
+			}
 		}
 		if (window.scrollY < sections[0].offsetTop) {
 			item.classList.remove('active-nav');
@@ -93,13 +91,11 @@ window.addEventListener('scroll', (e) => {
 	}
 	sections.forEach(section => {
 		navItem.forEach(item => {
-			if (window.scrollY >= section.offsetTop - 370) {
+			if (window.scrollY >= section.offsetTop - 375) {
 				item.classList.remove('active-nav');
 				if (window.innerWidth <= 600) {
 					if (window.scrollY + 900 >= document.body.scrollHeight) {
-						console.log(window.scrollY);
-						console.log(document.body.scrollHeight - 100);
-					navItem[2].classList.add('active-nav');
+						navItem[2].classList.add('active-nav');
 					} else if (item.dataset.to === section.getAttribute('id')) {
 						item.classList.add('active-nav');
 					}
@@ -186,7 +182,7 @@ filters.forEach((filter) => {
 				sections[1].style.display = 'flex';
 				window.setTimeout(() => {
 					project.style.display = 'none';
-				}, 300);
+				}, 330);
 			}
 		});
 	});
